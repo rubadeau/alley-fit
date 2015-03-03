@@ -12,7 +12,7 @@ class WorkoutsController < ApplicationController
 
   def create
     @client = Client.find(params[:client_id])
-    @workout = @client.workouts.new
+    @workout = @client.workouts.new(workout_params)
     if @workout.save
       redirect_to client_path(@client), notice: 'Workout created successfully!'
     else

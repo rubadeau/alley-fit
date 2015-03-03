@@ -12,9 +12,9 @@ class AssessmentsController < ApplicationController
 
   def create
     @client = Client.find(params[:client_id])
-    @assessment = @client.assessments.new
+    @assessment = @client.assessments.new(assessment_params)
     if @assessment.save
-      redirect_to client_assessment_path(@client, @assessment), notice: 'Assessment created successfully!'
+      redirect_to client_path(@client), notice: 'Assessment created successfully!'
     else
       render :new
     end
@@ -31,9 +31,8 @@ class AssessmentsController < ApplicationController
 
   def update
     @assessment = Assessment.find(params[:id])
-    if @assessment.update(assessment_params)
-      flash[:notice] = "Assessment updated successfully!"
-      redirect_to assessment_path(@assessment)
+    if @client.assessments.update(assessment_params)
+      redirect_to client_path(@client), :notice "Assessment updated successfully!"
     else
       render :edit
     end
