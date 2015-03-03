@@ -1,11 +1,30 @@
+<br />
 <div class="container">
   <div class="page-header">
     <div class="pull-right">
     <%= link_to "Edit", edit_client_path(@client), class: "btn btn-primary" %>
+    <%= link_to  "Delete Client", client_path(@client), method: :delete, class: "btn btn-danger",data: { confirm: "Are you sure you want to do this Alley?" }  %>
+
   </div>
     <h1><%= @client.name %></h1>
   </div>
+  <h3>Contact Info</h3>
+  <div class="jumbotron">
+    <dl class="dl-horizontal">
+      <dt>Phone</dt>
+      <dd><%= @client.phone %></dd>
+      <dt>Email</dt>
+      <dd><%= mail_to @client.email %></dd>
+      <dt>Member ID</dt>
+      <dd><%= @client.member_id %></dd>
+      <dt>Emergency Contact</dt>
+      <dd><%= @client.emergency_contact %></dd>
+      <dt>Emergency Number</dt>
+      <dd><%= @client.emergency_number %></dd>
+      <dt>Additional Info</dt>
+      <dd><%= @client.additional_info %></dd>
+    </dl>
 
-
+  </div>
 
 </div>
