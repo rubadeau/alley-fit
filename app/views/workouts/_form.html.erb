@@ -1,0 +1,32 @@
+<div class="form-horizontal">
+  <%= form_for @workout do |f| %>
+
+  <div class="form-group">
+    <%= f.label :date, class: "col-md-2 control-label" %>
+    <div class="col-md-5">
+      <%= f.date_field :date, class: "form-control" %>
+    </div>
+  </div>
+
+  <div class="form-group">
+    <%= f.label :time, class: "col-md-2 control-label" %>
+    <div class="col-md-5">
+      <%= f.time_field :time, class: "form-control" %>
+    </div>
+  </div>
+
+  <div class="form-group">
+    <%= f.label :workout, class: "col-md-2 control-label" %>
+    <div class="col-md-5">
+      <%= f.text_area :workout, class: "form-control" %>
+    </div>
+  </div>
+
+  <div class="form-group">
+    <%= f.label :coments, class: "col-md-2 control-label" %>
+    <div class="col-md-5">
+      <%= f.text_area :coments, class: "form-control" %>
+    </div>
+  </div>
+<% end %>
+</div>
