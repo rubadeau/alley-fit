@@ -6,13 +6,15 @@ class AssessmentsController < ApplicationController
   end
 
   def new
-    @assessments = Assessment.new
+    @assessment = Assessment.new
+    @client = Client.find(params[:client_id])
   end
 
   def create
-    @assessment = Assessment.new(assessment_params)
+    @client = Client.find(params[:client_id])
+    @assessment = @client.assessments.new
     if @assessment.save
-      redirect_to assessment_path(@assessment), notice: 'Assessment created successfully!'
+      redirect_to client_assessment_path(@client, @assessment), notice: 'Assessment created successfully!'
     else
       render :new
     end

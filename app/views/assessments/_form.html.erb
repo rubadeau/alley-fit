@@ -1,5 +1,5 @@
 <div class="form-horizontal">
-  <%= form_for @client.assessments do |f| %>
+  <%= form_for [@client, @assessment] do |f| %>
 
   <div class="form-group">
     <%= f.label :assessment_name, class: "col-md-2 control-label" %>
