@@ -5,6 +5,7 @@ class CreateWorkouts < ActiveRecord::Migration
       t.time :time
       t.text :workout
       t.text :comments
+      t.belongs_to :client
 
       t.timestamps null: false
     end

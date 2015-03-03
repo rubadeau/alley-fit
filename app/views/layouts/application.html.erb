@@ -15,14 +15,13 @@
         </div>
       </nav>
 
-
-
-      <% if flash[:notice] %>
-    <div class="alert alert-success text-center" role="alert"><%= flash[:notice] %></div>
-      <% end %>
-    </div>
 <br />
 
+<br />
+    <% if flash[:notice] %>
+    <div class="alert alert-success text-center" role="alert"><%= flash[:notice] %></div>
+    <% end %>
+    </div>
 <%= yield %>
 
 <footer class="container">
@@ -35,6 +34,7 @@
         </div>
       </div>
     </div>
+    <br />
   </div>
 </footer>
 

@@ -17,6 +17,8 @@ ActiveRecord::Schema.define(version: 20150303042136) do
   enable_extension "plpgsql"
 
   create_table "assessments", force: :cascade do |t|
+    t.string   "assessment_name"
+    t.date     "assessment_date"
     t.string   "overhead_squat"
     t.string   "single_leg_squat"
     t.decimal  "right_hip_strength"
@@ -32,12 +34,13 @@ ActiveRecord::Schema.define(version: 20150303042136) do
     t.string   "blood_pressure"
     t.integer  "weight"
     t.string   "height"
+    t.integer  "client_id"
     t.datetime "created_at",             null: false
     t.datetime "updated_at",             null: false
   end
 
   create_table "clients", force: :cascade do |t|
-    t.string   "client_id"
+    t.integer  "client_id"
     t.string   "name"
     t.string   "phone"
     t.string   "email"
@@ -55,6 +58,7 @@ ActiveRecord::Schema.define(version: 20150303042136) do
     t.time     "time"
     t.text     "workout"
     t.text     "comments"
+    t.integer  "client_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
