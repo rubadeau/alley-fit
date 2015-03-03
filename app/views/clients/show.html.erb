@@ -28,7 +28,7 @@
   <h3>Workouts</h3>
   <div class="jumbotron">
     <div class="pull-right">
-    <%= link_to "New Workout", new_workout_path(@client.workouts), class: "btn btn-primary" %>
+    <%= link_to "New Workout", new_client_workout_path(@client.id), class: "btn btn-primary" %>
   </div>
     <ul>
       <li></li>
@@ -38,7 +38,7 @@
   <h3>Assesments</h3>
   <div class="jumbotron">
     <div class="pull-right">
-    <%= link_to "New Assessment", new_assessment_path(@client.assessments), class: "btn btn-primary" %>
+    <%= link_to "New Assessment", new_client_assessment_path(@client.assessments), class: "btn btn-primary" %>
   </div>
     <ul>
       <li></li>

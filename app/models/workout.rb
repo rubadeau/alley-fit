@@ -1,5 +1,5 @@
 class Workout < ActiveRecord::Base
 
-  belongs_to :clients
+  belongs_to :client
 
 end

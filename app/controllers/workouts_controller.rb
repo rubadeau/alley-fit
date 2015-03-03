@@ -7,12 +7,14 @@ class WorkoutsController < ApplicationController
 
   def new
     @workout = Workout.new
+    @client = Client.find(params[:client_id])
   end
 
   def create
-    @workout = Workout.new(workout_params)
+    @client = Client.find(params[:client_id])
+    @workout = @client.workouts.new
     if @workout.save
-      redirect_to workout_path(@workout), notice: 'Workout created successfully!'
+      redirect_to client_workout_path(@client, @workout), notice: 'Workout created successfully!'
     else
       render :new
     end
