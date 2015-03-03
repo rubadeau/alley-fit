@@ -88,21 +88,21 @@
   <div class="form-group">
     <%= f.label :leg_lowering, class: "col-md-2 control-label" %>
     <div class="col-md-5">
-      <%= f.text_area :leg_lowering, class: "form-control" %>
+      <%= f.text_field :leg_lowering, class: "form-control" %>
     </div>
   </div>
 
   <div class="form-group">
     <%= f.label :push_up, class: "col-md-2 control-label" %>
     <div class="col-md-5">
-      <%= f.text_area :push_up, class: "form-control" %>
+      <%= f.text_field :push_up, class: "form-control" %>
     </div>
   </div>
 
   <div class="form-group">
     <%= f.label :blood_pressure, class: "col-md-2 control-label" %>
     <div class="col-md-5">
-      <%= f.text_area :blood_pressure, class: "form-control" %>
+      <%= f.text_field :blood_pressure, class: "form-control" %>
     </div>
   </div>
 
@@ -116,7 +116,14 @@
   <div class="form-group">
     <%= f.label :height, class: "col-md-2 control-label" %>
     <div class="col-md-5">
-      <%= f.text_area :height, class: "form-control" %>
+      <%= f.text_field :height, class: "form-control" %>
+    </div>
+  </div>
+
+  <div class="form-group">
+    <div class="col-md-offset-2 col-sm-6">
+      <%= f.submit class: "btn btn-primary"%>
+      <%= link_to "Cancel", workouts_path, class: "btn btn-default" %>
     </div>
   </div>
 <% end %>
