@@ -44,7 +44,7 @@ class WorkoutsController < ApplicationController
   private
 
   def workout_params
-    params.require(:workout).permit(:date, :time, :workout, :coments, :client_id)
+    params.require(:workout).permit(:date, :time, :workout, :comments, :client_id)
   end
 
   def find_client
