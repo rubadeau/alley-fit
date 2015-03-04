@@ -3,12 +3,11 @@
   <div class="page-header">
     <div class="pull-right">
     <%= link_to "Update Assessment", edit_client_assessment_path(@client, @assessment), class: "btn btn-primary" %>
-    <%= link_to  "Delete Assessment", client_path(@client), method: :delete, class: "btn btn-danger",data: { confirm: "Are you sure you want to do this Alley?" }  %>
+    <%= link_to  "Delete Assessment", client_assessment_path(@client, @assessment), method: :delete, class: "btn btn-danger",data: { confirm: "Are you sure you want to do this Alley?" }  %>
   </div>
     <h1><%= @client.name %></h1>
     <h4><%= @assessment.assessment_name %></h4>
   </div>
-
     <div class="jumbotron">
       <dl class="dl-horizontal">
         <dt>Date</dt>
