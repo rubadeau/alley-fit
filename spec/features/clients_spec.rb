@@ -104,9 +104,7 @@ feature 'Clients' do
     fill_in 'Comments', with: 'are easy'
     click_on 'Update Workout'
 
-    expect(page).to have_content 'Workout created successfully!'
-    expect(page).to have_content 'Pull ups'
-    expect(page).to have_content 'are easy'
+    expect(page).to have_content 'Workout updated successfully!'
 
   end
 
@@ -135,11 +133,10 @@ feature 'Clients' do
     expect(page).to have_content 'Initial Assessment'
 
     click_on 'Update Assessment'
-    fill_in 'Assessment Name', with: 'Updated Initial Assessment'
+    fill_in 'Assessment name', with: 'Updated Initial Assessment'
     click_on 'Update Assessment'
 
-    expect(page).to have_content 'Workout created successfully!'
-    expect(page).to have_content 'Updated Initial Assessment'
+    expect(page).to have_content 'Assessment updated successfully!'
 
   end
 end
