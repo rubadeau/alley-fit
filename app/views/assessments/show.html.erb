@@ -8,6 +8,12 @@
     <h1><%= @client.name %></h1>
     <h4><%= @assessment.assessment_name %></h4>
   </div>
+
+  <ol class="breadcrumb">
+    <li><%= link_to "Client List", root_path %></li>
+    <li><%= link_to "Client", client_path(@client) %></li>
+    <li class="active"><%= @client.assessments.name %></li>
+  </ol>
     <div class="jumbotron">
       <dl class="dl-horizontal">
         <dt>Date</dt>
