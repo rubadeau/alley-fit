@@ -52,7 +52,7 @@
   <h3>Goals</h3>
   <div class="jumbotron">
     <div class="pull-right">
-    <%= link_to "New Goal", new_client_goal_path(@goal.id), class: "btn btn-primary" %>
+    <%= link_to "New Goal", new_client_goal_path(@client.id), class: "btn btn-primary" %>
   </div>
     <% @client.goals.each do |g| %>
       <ul>
