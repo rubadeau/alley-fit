@@ -31,9 +31,9 @@
     <%= link_to "New Workout", new_client_workout_path(@client.id), class: "btn btn-primary" %>
   </div>
     <% @client.workouts.each do |w| %>
-    <ul>
-      <li><%= link_to w.date, client_workout_path(@client, w) %></li>
-    </ul>
+      <ul>
+        <li><%= link_to w.date, client_workout_path(@client, w) %></li>
+      </ul>
     <% end %>
   </div>
 
@@ -42,10 +42,22 @@
     <div class="pull-right">
     <%= link_to "New Assessment", new_client_assessment_path(@client.id), class: "btn btn-primary" %>
   </div>
-  <% @client.assessments.each do |a| %>
-    <ul>
-      <li><%= link_to a.assessment_name, client_assessment_path(@client, a) %></li>
-    </ul>
+    <% @client.assessments.each do |a| %>
+      <ul>
+        <li><%= link_to a.assessment_name, client_assessment_path(@client, a) %></li>
+      </ul>
+    <% end %>
+  </div>
+
+  <h3>Goals</h3>
+  <div class="jumbotron">
+    <div class="pull-right">
+    <%= link_to "New Goal", new_client_goal_path(@goal.id), class: "btn btn-primary" %>
+  </div>
+    <% @client.goals.each do |g| %>
+      <ul>
+        <li><%= link_to g.goal_name, client_goal_path(@client, g) %></li>
+      </ul>
     <% end %>
   </div>
 
