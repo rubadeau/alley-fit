@@ -2,8 +2,8 @@
 <div class="container">
   <div class="page-header">
     <div class="pull-right">
-    <%= link_to "Edit", edit_client_path(@client), class: "btn btn-sample" %>
-    <%= link_to  "Delete Client", client_path(@client), method: :delete, class: "btn btn-custom",data: { confirm: "Are you sure you want to do this Alley?" }  %>
+    <%= link_to "Update Client Info", edit_client_path(@client), class: "btn btn-sample btn-lg" %>
+    <%= link_to  "Delete Client", client_path(@client), method: :delete, class: "btn btn-custom btn-lg",data: { confirm: "Are you sure you want to do this Alley?" }  %>
   </div>
     <h1><%= @client.name %></h1>
   </div>
@@ -28,7 +28,7 @@
   <h3>Workouts</h3>
   <div class="jumbotron">
     <div class="pull-right">
-    <%= link_to "New Workout", new_client_workout_path(@client.id), class: "btn btn-sample" %>
+    <%= link_to "New Workout", new_client_workout_path(@client.id), class: "btn btn-sample btn-lg" %>
   </div>
     <% @client.workouts.each do |w| %>
       <ul>
@@ -40,7 +40,7 @@
   <h3>Assesments</h3>
   <div class="jumbotron">
     <div class="pull-right">
-    <%= link_to "New Assessment", new_client_assessment_path(@client.id), class: "btn btn-sample" %>
+    <%= link_to "New Assessment", new_client_assessment_path(@client.id), class: "btn btn-sample btn-lg" %>
   </div>
     <% @client.assessments.each do |a| %>
       <ul>
@@ -52,7 +52,7 @@
   <h3>Goals</h3>
   <div class="jumbotron">
     <div class="pull-right">
-    <%= link_to "New Goal", new_client_goal_path(@client.id), class: "btn btn-sample" %>
+    <%= link_to "New Goal", new_client_goal_path(@client.id), class: "btn btn-sample btn-lg" %>
   </div>
     <% @client.goals.each do |g| %>
       <ul>
