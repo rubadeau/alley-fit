@@ -9,8 +9,8 @@
   </div>
   <ol class="breadcrumb">
     <li><%= link_to "Client List", root_path %></li>
-    <li><%= link_to "Client", client_path(@client) %></li>
-    <li class="active"><%= @workout.date %></li>
+    <li><%= link_to @client.name, client_path(@client) %></li>
+    <li class="active"><%= @workout.date.strftime("%m/%d/%Y") %></li>
   </ol>
     <div class="jumbotron">
       <dl class="dl-horizontal">

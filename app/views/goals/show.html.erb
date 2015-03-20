@@ -5,12 +5,12 @@
     <%= link_to  "Delete Goal", client_goal_path(@client, @goal), method: :delete, class: "btn btn-custom",data: { confirm: "Are you sure you want to do this Alley?" }  %>
   </div>
     <h1><%= @client.name %></h1>
-    <h3><%= @goal.goal_name %></h3>
+    <h3>Goal: <%= @goal.goal_name %></h3>
   </div>
 
   <ol class="breadcrumb">
     <li><%= link_to "Client List", root_path %></li>
-    <li><%= link_to "Client", client_path(@client) %></li>
+    <li><%= link_to @client.name, client_path(@client) %></li>
     <li class="active"><%= @client.goals.name %></li>
   </ol>
     <div class="jumbotron">

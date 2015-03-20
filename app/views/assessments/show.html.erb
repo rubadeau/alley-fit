@@ -11,7 +11,7 @@
 
   <ol class="breadcrumb">
     <li><%= link_to "Client List", root_path %></li>
-    <li><%= link_to "Client", client_path(@client) %></li>
+    <li><%= link_to @client.name, client_path(@client) %></li>
     <li class="active"><%= @client.assessments.name %></li>
   </ol>
     <div class="jumbotron">
