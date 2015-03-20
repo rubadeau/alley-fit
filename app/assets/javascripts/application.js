@@ -16,3 +16,5 @@
 //= require_tree .
 //= require jquery
 //= require bootstrap-sprockets
+//netdna.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css
+//netdna.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js

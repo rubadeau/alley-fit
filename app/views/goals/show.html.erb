@@ -1,8 +1,8 @@
 <div class="container">
   <div class="page-header">
     <div class="pull-right">
-    <%= link_to "Update Goal", edit_client_goal_path(@client, @goal), class: "btn btn-primary" %>
-    <%= link_to  "Delete Goal", client_goal_path(@client, @goal), method: :delete, class: "btn btn-danger",data: { confirm: "Are you sure you want to do this Alley?" }  %>
+    <%= link_to "Update Goal", edit_client_goal_path(@client, @goal), class: "btn btn-sample" %>
+    <%= link_to  "Delete Goal", client_goal_path(@client, @goal), method: :delete, class: "btn btn-custom",data: { confirm: "Are you sure you want to do this Alley?" }  %>
   </div>
     <h1><%= @client.name %></h1>
     <h3><%= @goal.goal_name %></h3>

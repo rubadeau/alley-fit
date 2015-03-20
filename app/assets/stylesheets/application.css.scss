@@ -16,3 +16,170 @@
  // "bootstrap-sprockets" must be imported before "bootstrap" and "bootstrap/variables"
  @import "bootstrap-sprockets";
  @import "bootstrap";
+
+
+.navbar-default {
+  background-color: #af0de1;
+  border-color: #280256;
+}
+.navbar-default .navbar-brand {
+  color: #0b0804;
+}
+.navbar-default .navbar-brand:hover, .navbar-default .navbar-brand:focus {
+  color: #ffbbbc;
+}
+.navbar-default .navbar-text {
+  color: #0b0804;
+}
+.navbar-default .navbar-nav > li > a {
+  color: #0b0804;
+}
+.navbar-default .navbar-nav > li > a:hover, .navbar-default .navbar-nav > li > a:focus {
+  color: #ffbbbc;
+}
+.navbar-default .navbar-nav > .active > a, .navbar-default .navbar-nav > .active > a:hover, .navbar-default .navbar-nav > .active > a:focus {
+  color: #ffbbbc;
+  background-color: #280256;
+}
+.navbar-default .navbar-nav > .open > a, .navbar-default .navbar-nav > .open > a:hover, .navbar-default .navbar-nav > .open > a:focus {
+  color: #ffbbbc;
+  background-color: #280256;
+}
+.navbar-default .navbar-toggle {
+  border-color: #280256;
+}
+.navbar-default .navbar-toggle:hover, .navbar-default .navbar-toggle:focus {
+  background-color: #280256;
+}
+.navbar-default .navbar-toggle .icon-bar {
+  background-color: #0b0804;
+}
+.navbar-default .navbar-collapse,
+.navbar-default .navbar-form {
+  border-color: #0b0804;
+}
+.navbar-default .navbar-link {
+  color: #0b0804;
+}
+.navbar-default .navbar-link:hover {
+  color: #ffbbbc;
+}
+
+@media (max-width: 767px) {
+  .navbar-default .navbar-nav .open .dropdown-menu > li > a {
+    color: #0b0804;
+  }
+  .navbar-default .navbar-nav .open .dropdown-menu > li > a:hover, .navbar-default .navbar-nav .open .dropdown-menu > li > a:focus {
+    color: #ffbbbc;
+  }
+  .navbar-default .navbar-nav .open .dropdown-menu > .active > a, .navbar-default .navbar-nav .open .dropdown-menu > .active > a:hover, .navbar-default .navbar-nav .open .dropdown-menu > .active > a:focus {
+    color: #ffbbbc;
+    background-color: #280256;
+  }
+}
+
+
+
+
+
+
+
+
+
+
+.btn-sample {
+  color: #080101;
+  background-color: #53FA12;
+  border-color: #04020D;
+}
+
+.btn-sample:hover,
+.btn-sample:focus,
+.btn-sample:active,
+.btn-sample.active,
+.open .dropdown-toggle.btn-sample {
+  color: #080101;
+  background-color: #08F2F2;
+  border-color: #04020D;
+}
+
+.btn-sample:active,
+.btn-sample.active,
+.open .dropdown-toggle.btn-sample {
+  background-image: none;
+}
+
+.btn-sample.disabled,
+.btn-sample[disabled],
+fieldset[disabled] .btn-sample,
+.btn-sample.disabled:hover,
+.btn-sample[disabled]:hover,
+fieldset[disabled] .btn-sample:hover,
+.btn-sample.disabled:focus,
+.btn-sample[disabled]:focus,
+fieldset[disabled] .btn-sample:focus,
+.btn-sample.disabled:active,
+.btn-sample[disabled]:active,
+fieldset[disabled] .btn-sample:active,
+.btn-sample.disabled.active,
+.btn-sample[disabled].active,
+fieldset[disabled] .btn-sample.active {
+  background-color: #53FA12;
+  border-color: #04020D;
+}
+
+.btn-sample .badge {
+  color: #53FA12;
+  background-color: #080101;
+}
+
+
+
+
+
+
+.btn-custom { 
+  color: #080101;
+  background-color: #FA0D19;
+  border-color: #04020D;
+}
+
+.btn-custom:hover, 
+.btn-custom:focus, 
+.btn-custom:active, 
+.btn-custom.active, 
+.open .dropdown-toggle.btn-custom { 
+  color: #080101;
+  background-color: #FA0D19;
+  border-color: #04020D;
+}
+
+.btn-custom:active, 
+.btn-custom.active, 
+.open .dropdown-toggle.btn-custom { 
+  background-image: none;
+}
+
+.btn-custom.disabled, 
+.btn-custom[disabled], 
+fieldset[disabled] .btn-custom, 
+.btn-custom.disabled:hover, 
+.btn-custom[disabled]:hover, 
+fieldset[disabled] .btn-custom:hover, 
+.btn-custom.disabled:focus, 
+.btn-custom[disabled]:focus, 
+fieldset[disabled] .btn-custom:focus, 
+.btn-custom.disabled:active, 
+.btn-custom[disabled]:active, 
+fieldset[disabled] .btn-custom:active, 
+.btn-custom.disabled.active, 
+.btn-custom[disabled].active, 
+fieldset[disabled] .btn-custom.active { 
+  background-color: #FA0D19;
+  border-color: #04020D;
+}
+
+.btn-custom .badge { 
+  color: #FA0D19;
+  background-color: #080101;
+}
