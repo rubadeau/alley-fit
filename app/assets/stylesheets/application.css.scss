@@ -18,6 +18,23 @@
  @import "bootstrap";
 
 
+a:link {
+  color: #F723F7;
+}
+a:visited {
+  color: #F723F7;
+}
+a:hover {
+  color: #CCCCCC;
+}
+a:active {
+  color: #F723F7;
+}
+
+
+
+
+
 .navbar-default {
   background-color: #af0de1;
   border-color: #280256;
@@ -139,8 +156,8 @@ fieldset[disabled] .btn-sample.active {
 
 
 .btn-custom { 
-  color: #080101;
-  background-color: #FA0D19;
+  color: #F723F7;
+  background-color: #0DF2FA;
   border-color: #04020D;
 }
 
@@ -149,8 +166,8 @@ fieldset[disabled] .btn-sample.active {
 .btn-custom:active, 
 .btn-custom.active, 
 .open .dropdown-toggle.btn-custom { 
-  color: #080101;
-  background-color: #FA0D19;
+  color: #F723F7;
+  background-color: #0DF2FA;
   border-color: #04020D;
 }
 
@@ -175,11 +192,11 @@ fieldset[disabled] .btn-custom:active,
 .btn-custom.disabled.active, 
 .btn-custom[disabled].active, 
 fieldset[disabled] .btn-custom.active { 
-  background-color: #FA0D19;
+  background-color: #0DF2FA;
   border-color: #04020D;
 }
 
 .btn-custom .badge { 
-  color: #FA0D19;
-  background-color: #080101;
+  color: #0DF2FA;
+  background-color: #F723F7;
 }
