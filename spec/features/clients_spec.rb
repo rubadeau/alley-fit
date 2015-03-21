@@ -5,7 +5,7 @@ feature 'Clients' do
   scenario 'User sees headline' do
 
     visit root_path
-    expect(page).to have_content('Active Clients')
+    expect(page).to have_content("Alley's Clients")
   end
 
   scenario 'can make a new client from the new client form' do
@@ -44,7 +44,7 @@ feature 'Clients' do
     expect(current_path).to eq client_path(client)
     expect(page).to have_content 'Workout created successfully!'
 
-    click_link '1992-03-03'
+    click_link '03/03/1992'
 
     expect(page).to have_content 'Pull ups'
   end
@@ -97,7 +97,7 @@ feature 'Clients' do
     expect(current_path).to eq client_path(client)
     expect(page).to have_content 'Workout created successfully!'
 
-    click_link '1992-03-03'
+    click_link '03/03/1992'
 
     expect(page).to have_content 'Pull ups'
     click_on 'Update Workout'
