@@ -3,6 +3,8 @@
     <h1>New Client Form</h1>
   </div>
 
+  <%= render partial: "shared/errors", locals: {object: @client} %>
+
   <%= render partial: "form", locals: {button_name: "Create Client"} %>
 
 </div>

@@ -3,6 +3,8 @@
     <h1>Update Goal</h1>
   </div>
 
+  <%= render partial: "shared/errors", locals: {object: @goal} %>
+
   <%= render partial: "form", locals: {button_name: "Update Goal"} %>
 
 </div>
