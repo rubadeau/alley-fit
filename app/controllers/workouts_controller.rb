@@ -1,6 +1,9 @@
 class WorkoutsController < ApplicationController
   before_action :find_client
 
+  def index
+    @workouts = Workout.all
+  end
 
   def new
     @workout = @client.workouts.build

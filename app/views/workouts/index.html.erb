@@ -1,0 +1,23 @@
+<div class="container">
+<h3>All <%= @client.name %>'s Workouts</h3>
+
+<ol class="breadcrumb">
+  <li><%= link_to "Client List", root_path %></li>
+  <li><%= link_to @client.name, client_path(@client) %></li>
+  <li class="active"><%= "All Workouts for #{@client.name}" %></li>
+</ol>
+
+<% @client.workouts.each do |w| %>
+<div class="jumbotron">
+  <dl class="dl-horizontal">
+    <dd><h3><%= w.date.strftime("%m/%d/%Y") %></h3></dd>
+    <dt>Time</dt>
+    <dd><%= w.time.strftime("%I:%M:%S %p") %></dd>
+    <dt>Workout</dt>
+    <dd><%= w.workout %></dd>
+    <dt>Comments</dt>
+    <dd><%= w.comments %></dd>
+  </dl>
+</div>
+<% end %>
+</div>
