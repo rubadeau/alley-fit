@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150326051557) do
+ActiveRecord::Schema.define(version: 20150326214811) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -21,14 +21,14 @@ ActiveRecord::Schema.define(version: 20150326051557) do
     t.date     "assessment_date"
     t.string   "overhead_squat"
     t.string   "single_leg_squat"
-    t.decimal  "right_hip_strength"
-    t.decimal  "left_hip_strength"
+    t.string   "right_hip_strength"
+    t.string   "left_hip_strength"
     t.string   "shoulder_mobility"
     t.string   "right_glute_activation"
     t.string   "left_glute_activation"
-    t.decimal  "plank"
-    t.decimal  "right_plank"
-    t.decimal  "left_plank"
+    t.string   "plank"
+    t.string   "right_plank"
+    t.string   "left_plank"
     t.string   "leg_lowering"
     t.string   "push_up"
     t.string   "blood_pressure"
