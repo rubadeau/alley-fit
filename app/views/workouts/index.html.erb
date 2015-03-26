@@ -10,7 +10,7 @@
 <% @client.workouts.each do |w| %>
 <div class="jumbotron">
   <dl class="dl-horizontal">
-    <dd><h3><%= w.date.strftime("%m/%d/%Y") %></h3></dd>
+    <dd><h3><%= link_to w.date.strftime("%m/%d/%Y"), client_workout_path(@client, w) %></h3></dd>
     <dt>Time</dt>
     <dd><%= w.time.strftime("%I:%M:%S %p") %></dd>
     <dt>Workout</dt>

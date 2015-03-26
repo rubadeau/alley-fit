@@ -139,4 +139,37 @@ feature 'Clients' do
     expect(page).to have_content 'Assessment updated successfully!'
 
   end
+
+
+  scenario 'can update food logs' do
+    visit root_path
+    click_on 'New Client'
+
+    expect(current_path).to eq new_client_path
+
+    fill_in 'Name', with: 'Overweight Dan'
+    click_on 'Create Client'
+    client = Client.last
+    expect(current_path).to eq client_path(client)
+    expect(page).to have_content 'Client created successfully!'
+    expect(page).to have_content 'Overweight Dan'
+
+    click_on 'New Food Log'
+    fill_in 'Date', with: '03/03/1992'
+    click_on 'Create Food Log'
+
+    expect(current_path).to eq client_path(client)
+    expect(page).to have_content 'Food Log created successfully!'
+
+    click_link '03/03/1992'
+
+    expect(page).to have_content '03/03/1992'
+
+    click_on 'Update Food Log'
+    fill_in 'Date', with: '03/20/1992'
+    click_on 'Update Assessment'
+
+    expect(page).to have_content 'Assessment updated successfully!'
+
+  end
 end
