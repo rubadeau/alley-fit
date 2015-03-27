@@ -5,7 +5,7 @@
     <%= link_to  "Delete Food Log", client_food_log_path(@client, @food_log), method: :delete, class: "btn btn-custom",data: { confirm: "Are you sure you want to do this Alley?" }  %>
   </div>
     <h1><%= @client.name %></h1>
-    <h3><%= @food_log.date %></h3>
+    <h3><%= @food_log.date.strftime("%m/%d/%Y") %></h3>
   </div>
 
   <ol class="breadcrumb">
