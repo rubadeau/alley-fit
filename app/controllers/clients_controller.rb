@@ -19,8 +19,9 @@ class ClientsController < ApplicationController
 
   def show
     @client = Client.find(params[:id])
-    @workout = @client.workouts
+    @workout = @client.workouts.order(:date).reverse
     @goal = @client.goals
+    @food_log = @client.food_logs.order(:date).reverse
   end
 
   def edit

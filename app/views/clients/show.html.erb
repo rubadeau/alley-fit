@@ -31,7 +31,7 @@
     <%= link_to "New Workout", new_client_workout_path(@client.id), class: "btn btn-sample btn-lg" %>
     <%= link_to "All #{@client.name}'s Workouts", client_workouts_path(@client.id), class: "btn btn-sample btn-lg" %>
   </div>
-    <% @client.workouts.each do |w| %>
+    <% @workout.each do |w| %>
       <ul>
         <li><%= link_to w.date.strftime("%m/%d/%Y"), client_workout_path(@client, w) %></li>
       </ul>
@@ -67,7 +67,7 @@
     <div class="pull-right">
     <%= link_to "New Food Log", new_client_food_log_path(@client.id), class: "btn btn-sample btn-lg" %>
   </div>
-    <% @client.food_logs.each do |fl| %>
+    <% @food_log.each do |fl| %>
       <ul>
         <li><%= link_to fl.date.strftime("%m/%d/%Y"), client_food_log_path(@client, fl) %></li>
       </ul>
