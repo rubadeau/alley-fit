@@ -1,0 +1,40 @@
+<div class="container">
+  <div class="page-header">
+    <div class="pull-right">
+    <%= link_to "Update Food Log", edit_client_food_log_path(@client, @food_log), class: "btn btn-sample" %>
+    <%= link_to  "Delete Food Log", client_food_log_path(@client, @food_log), method: :delete, class: "btn btn-custom",data: { confirm: "Are you sure you want to do this Alley?" }  %>
+  </div>
+    <h1><%= @client.name %></h1>
+    <h3><%= @food_log.date %></h3>
+  </div>
+
+  <ol class="breadcrumb">
+    <li><%= link_to "Client List", root_path %></li>
+    <li><%= link_to @client.name, client_path(@client) %></li>
+    <li class="active"><%= "Food Log for #{@client.name}" %></li>
+  </ol>
+    <div class="jumbotron">
+      <dl class="dl-horizontal">
+        <dt>Date</dt>
+        <dd><%= @food_log.date.strftime("%m/%d/%Y") %></dd>
+        <dt>Breakfast</dt>
+        <dd><%= @food_log.breakfast %></dd>
+        <dt>Mid Morning Snack</dt>
+        <dd><%= @food_log.mid_morning_snack %></dd>
+        <dt>Lunch</dt>
+        <dd><%= @food_log.lunch %></dd>
+        <dt>Afternoon Snack</dt>
+        <dd><%= @food_log.afternoon_snack %></dd>
+        <dt>Dinner</dt>
+        <dd><%= @food_log.dinner %></dd>
+        <dt>After Dinner</dt>
+        <dd><%= @food_log.after_dinner %></dd>
+        <dt>Drinks</dt>
+        <dd><%= @food_log.drinks %></dd>
+        <dt>Client Comments</dt>
+        <dd><%= @food_log.client_coments %></dd>
+        <dt>Trainer Feedback</dt>
+        <dd><%= @food_log.trainer_feedback %></dd>
+      </dl>
+    </div>
+  </div>

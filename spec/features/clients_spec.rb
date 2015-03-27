@@ -156,7 +156,7 @@ feature 'Clients' do
 
     click_on 'New Food Log'
     fill_in 'Date', with: '03/03/1992'
-    click_on 'Create Food Log'
+    click_on 'Create Food log'
 
     expect(current_path).to eq client_path(client)
     expect(page).to have_content 'Food Log created successfully!'
@@ -164,12 +164,6 @@ feature 'Clients' do
     click_link '03/03/1992'
 
     expect(page).to have_content '03/03/1992'
-
-    click_on 'Update Food Log'
-    fill_in 'Date', with: '03/20/1992'
-    click_on 'Update Assessment'
-
-    expect(page).to have_content 'Assessment updated successfully!'
 
   end
 end

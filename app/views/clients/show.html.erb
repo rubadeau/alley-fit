@@ -62,4 +62,17 @@
     <% end %>
   </div>
 
+  <h3>Food Logs</h3>
+  <div class="jumbotron">
+    <div class="pull-right">
+    <%= link_to "New Food Log", new_client_food_log_path(@client.id), class: "btn btn-sample btn-lg" %>
+  </div>
+    <% @client.food_logs.each do |fl| %>
+      <ul>
+        <li><%= link_to fl.date.strftime("%m/%d/%Y"), client_food_log_path(@client, fl) %></li>
+      </ul>
+    <% end %>
+  </div>
+
+
 </div>

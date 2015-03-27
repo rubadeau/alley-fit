@@ -1,0 +1,81 @@
+<div class="form-horizontal">
+  <%= form_for [@client, @food_log] do |f| %>
+
+    <div class="form-group">
+    <%= f.label :date, class: "col-md-2 control-label" %>
+    <div class="col-md-5">
+      <%= f.date_field :date, class: "form-control" %>
+    </div>
+  </div>
+
+  <div class="form-group">
+    <%= f.label :breakfast, class: "col-md-2 control-label" %>
+    <div class="col-md-5">
+      <%= f.text_field :breakfast, class: "form-control" %>
+    </div>
+  </div>
+
+  <div class="form-group">
+    <%= f.label :mid_morning_snack, class: "col-md-2 control-label" %>
+    <div class="col-md-5">
+      <%= f.text_field :mid_morning_snack, class: "form-control" %>
+    </div>
+  </div>
+
+  <div class="form-group">
+    <%= f.label :lunch, class: "col-md-2 control-label" %>
+    <div class="col-md-5">
+      <%= f.text_field :lunch, class: "form-control" %>
+    </div>
+  </div>
+
+  <div class="form-group">
+    <%= f.label :afternoon_snack, class: "col-md-2 control-label" %>
+    <div class="col-md-5">
+      <%= f.text_field :afternoon_snack, class: "form-control" %>
+    </div>
+  </div>
+
+  <div class="form-group">
+    <%= f.label :dinner, class: "col-md-2 control-label" %>
+    <div class="col-md-5">
+      <%= f.text_field :dinner, class: "form-control" %>
+    </div>
+  </div>
+
+  <div class="form-group">
+    <%= f.label :after_dinner, class: "col-md-2 control-label" %>
+    <div class="col-md-5">
+      <%= f.text_field :after_dinner, class: "form-control" %>
+    </div>
+  </div>
+
+  <div class="form-group">
+    <%= f.label :drinks, class: "col-md-2 control-label" %>
+    <div class="col-md-5">
+      <%= f.text_field :drinks, class: "form-control" %>
+    </div>
+  </div>
+
+  <div class="form-group">
+    <%= f.label :client_coments, class: "col-md-2 control-label" %>
+    <div class="col-md-5">
+      <%= f.text_area :client_coments, class: "form-control" %>
+    </div>
+  </div>
+
+  <div class="form-group">
+    <%= f.label :trainer_feedback, class: "col-md-2 control-label" %>
+    <div class="col-md-5">
+      <%= f.text_area :trainer_feedback, class: "form-control" %>
+    </div>
+  </div>
+
+  <div class="form-group">
+    <div class="col-md-offset-2 col-sm-6">
+      <%= f.submit class: "btn btn-sample"%>
+      <%= link_to "Cancel", client_path(@client), class: "btn btn-custom" %>
+    </div>
+  </div>
+<% end %>
+</div>
