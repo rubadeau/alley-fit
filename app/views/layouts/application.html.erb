@@ -17,16 +17,16 @@
             <h3><%= link_to "AlleyFit", root_path %></h3>
             <div class="navbar-right">
               <% if current_user %>
-                <%= link_to "Sign out", sign_out_path %>
+                <%= link_to "Sign out", sign_out_path, class: "btn btn-sample" %>
               <% else %>
-                <%= link_to "Sign In", sign_in_path %>
-                <%= link_to "Sign Up", sign_up_path %></p>
+                <%= link_to "Sign In", sign_in_path, class: "btn btn-sample" %>
+                <%= link_to "Sign Up", sign_up_path, class: "btn btn-sample" %></p>
               <% end %>
             </div>
         </div>
       </nav>
     </div>
-
+<br />
 
 <br />
 
