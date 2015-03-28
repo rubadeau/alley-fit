@@ -15,17 +15,18 @@
           <p class="navbar-brand">
             <%=image_tag("headshot.png", class: "img-responsive")%>
             <h3><%= link_to "AlleyFit", root_path %></h3>
-            <div class="navbar-right">
+            <div class="pull-right">
               <% if current_user %>
+                <%= link_to "#{current_user.name}", client_path(current_user), class: "btn btn-sample" %>
                 <%= link_to "Sign out", sign_out_path, class: "btn btn-sample" %>
               <% else %>
                 <%= link_to "Sign In", sign_in_path, class: "btn btn-sample" %>
-                <%= link_to "Sign Up", sign_up_path, class: "btn btn-sample" %></p>
+                <%= link_to "Sign Up", sign_up_path, class: "btn btn-sample" %>
               <% end %>
             </div>
+          </p>
         </div>
       </nav>
-    </div>
 <br />
 
 <br />
@@ -35,6 +36,8 @@
     <div class="alert alert-danger text-center" role="alert"><%= flash[:notice] %></div>
     <% end %>
     </div>
+  </div>
+
 <%= yield %>
 
 <footer>
