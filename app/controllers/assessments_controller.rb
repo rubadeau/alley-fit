@@ -1,5 +1,6 @@
 class AssessmentsController < ApplicationController
-
+  
+  before_action :authenticate_user
   before_action :find_client
 
 
@@ -47,7 +48,7 @@ class AssessmentsController < ApplicationController
     params.require(:assessment).permit( :assessment_name, :assessment_date, :overhead_squat,
      :single_leg_squat, :right_hip_strength, :left_hip_strength, :shoulder_mobility,
      :right_glute_activation, :left_glute_activation, :plank, :right_plank, :left_plank,
-     :leg_lowering, :push_up, :blood_pressure, :weight, :height, :client_id, 
+     :leg_lowering, :push_up, :blood_pressure, :weight, :height, :client_id,
      :body_fat_percentage, :bmi, :heart_rate)
   end
 

@@ -1,9 +1,14 @@
 class ClientsController < ApplicationController
 
-  before_action :set_client
+  before_action :authenticate_user
+  before_action :set_client, only: [:show, :edit, :update, :destroy]
 
   def index
-   @clients = Client.all.order(:name)
+    if current_user.admin
+      @clients = Client.all.order(:name)
+    else
+      redirect_to client_path(current_user)
+    end
   end
 
   def new
@@ -37,8 +42,7 @@ class ClientsController < ApplicationController
   end
 
   def destroy
-   client = Client.find(params[:id])
-   client.destroy
+   @client.destroy
    flash[:notice] = "Deleted Client"
    redirect_to clients_path
   end
@@ -49,7 +53,7 @@ class ClientsController < ApplicationController
     def client_params
       params.require(:client).permit(:name, :phone, :email, :member_id,
       :emergency_contact, :emergency_number, :additional_info, :client_id,
-      :password)
+      :password, :admin)
     end
 
     def verify_user_access

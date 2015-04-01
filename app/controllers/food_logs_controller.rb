@@ -1,5 +1,6 @@
 class FoodLogsController < ApplicationController
 
+  before_action :authenticate_user
   before_action :find_client
 
 
