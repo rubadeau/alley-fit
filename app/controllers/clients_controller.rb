@@ -53,4 +53,10 @@ class ClientsController < ApplicationController
       :emergency_contact, :emergency_number, :additional_info, :client_id,
       :password)
     end
+
+    def verify_user_access
+      unless current_user == @client || current_user.admin
+        render file: 'public/404.html', status: :not_found, layout: false
+      end
+    end
   end
