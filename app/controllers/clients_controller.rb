@@ -1,5 +1,7 @@
 class ClientsController < ApplicationController
 
+  before_action :set_client
+
   def index
    @clients = Client.all.order(:name)
   end
@@ -9,7 +11,6 @@ class ClientsController < ApplicationController
   end
 
   def create
-    @client = Client.new(client_params)
     if @client.save
       redirect_to client_path(@client), notice: 'Client created successfully!'
     else
@@ -18,18 +19,15 @@ class ClientsController < ApplicationController
   end
 
   def show
-    @client = Client.find(params[:id])
     @workout = @client.workouts.order(:date).reverse
     @goal = @client.goals
     @food_log = @client.food_logs.order(:date).reverse
   end
 
   def edit
-    @client = Client.find(params[:id])
   end
 
   def update
-    @client = Client.find(params[:id])
     if @client.update(client_params)
       flash[:notice] = "Client updated successfully!"
       redirect_to client_path(@client)
@@ -58,5 +56,9 @@ class ClientsController < ApplicationController
       unless current_user == @client || current_user.admin
         render file: 'public/404.html', status: :not_found, layout: false
       end
+    end
+
+    def set_client
+      @client = Client.find(params[:id])
     end
   end
