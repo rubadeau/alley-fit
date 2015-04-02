@@ -44,7 +44,7 @@ class WorkoutsController < ApplicationController
    workout = @client.workouts.find(params[:id])
    workout.destroy
    flash[:notice] = "Deleted Workout"
-   redirect_to client_path(@client)
+   redirect_to trainer_client_path(@trainer, @client)
   end
 
 

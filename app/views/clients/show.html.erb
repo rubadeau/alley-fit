@@ -43,7 +43,7 @@
   </div>
     <% @client.assessments.each do |a| %>
       <ul>
-        <li><%= link_to a.assessment_name, client_assessment_path(@client, a) %></li>
+        <li><%= link_to a.assessment_name, trainer_client_assessment_path(@trainer, @client, a) %></li>
       </ul>
     <% end %>
   </div>
