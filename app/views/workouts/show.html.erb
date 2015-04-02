@@ -2,15 +2,15 @@
 <div class="container">
   <div class="page-header">
     <div class="pull-right">
-    <%= link_to "All #{@client.name}'s Workouts", client_workouts_path(@client, @workout), class: "btn btn-sample" %>
-    <%= link_to "Update Workout", edit_client_workout_path(@client, @workout), class: "btn btn-sample" %>
-    <%= link_to  "Delete Workout", client_workout_path(@client, @workout), method: :delete, class: "btn btn-custom",data: { confirm: "Are you sure you want to do this Alley?" }  %>
+    <%= link_to "All #{@client.name}'s Workouts", trainer_client_workouts_path(@trainer, @client, @workout), class: "btn btn-sample" %>
+    <%= link_to "Update Workout", edit_trainer_client_workout_path(@trainer, @client, @workout), class: "btn btn-sample" %>
+    <%= link_to  "Delete Workout", trainer_client_workout_path(@trainer, @client, @workout), method: :delete, class: "btn btn-custom",data: { confirm: "Are you sure you want to do this Alley?" }  %>
   </div>
     <h1><%= @client.name %></h1>
   </div>
   <ol class="breadcrumb">
     <li><%= link_to "Client List", root_path %></li>
-    <li><%= link_to @client.name, client_path(@client) %></li>
+    <li><%= link_to @client.name, trainer_client_path(@trainer, @client) %></li>
     <li class="active"><%= @workout.date.strftime("%m/%d/%Y") %></li>
   </ol>
     <div class="jumbotron">

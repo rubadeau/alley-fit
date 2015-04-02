@@ -19,7 +19,7 @@ class TrainersController < ApplicationController
 
   def show
     @trainer = Trainer.find(params[:id])
-    @client = @trainer.clients.all
+    @clients = @trainer.clients
   end
 
   def edit

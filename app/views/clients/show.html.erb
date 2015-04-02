@@ -1,7 +1,7 @@
 <div class="container">
   <div class="page-header">
     <div class="pull-right">
-    <%= link_to "Update Client Info", edit_trainer_client_path(@trainer, @client), class: "btn btn-sample btn-lg" %>
+    <%= link_to "Update Client Info", edit_trainer_client_path(@trainer.id, @client), class: "btn btn-sample btn-lg" %>
     <%= link_to  "Delete Client", trainer_client_path(@trainer, @client), method: :delete, class: "btn btn-custom btn-lg",data: { confirm: "Are you sure you want to do this Alley?" }  %>
 
   </div>
@@ -26,12 +26,12 @@
   <h3>Workouts</h3>
   <div class="jumbotron">
     <div class="pull-right">
-    <%= link_to "New Workout", new_client_workout_path(@client.id), class: "btn btn-sample btn-lg" %>
-    <%= link_to "All #{@client.name}'s Workouts", client_workouts_path(@client.id), class: "btn btn-sample btn-lg" %>
+    <%= link_to "New Workout", new_trainer_client_workout_path(@trainer.id, @client.id), class: "btn btn-sample btn-lg" %>
+    <%= link_to "All #{@client.name}'s Workouts", trainer_client_workouts_path(@trainer.id, @client.id), class: "btn btn-sample btn-lg" %>
   </div>
     <% @workout.each do |w| %>
       <ul>
-        <li><%= link_to w.date.strftime("%m/%d/%Y"), client_workout_path(@client, w) %></li>
+        <li><%= link_to w.date.strftime("%m/%d/%Y"), trainer_client_workout_path(@trainer, @client, w) %></li>
       </ul>
     <% end %>
   </div>
@@ -39,7 +39,7 @@
   <h3>Assessments</h3>
   <div class="jumbotron">
     <div class="pull-right">
-    <%= link_to "New Assessment", new_client_assessment_path(@client.id), class: "btn btn-sample btn-lg" %>
+    <%= link_to "New Assessment", new_trainer_client_assessment_path(@trainer.id, @client.id), class: "btn btn-sample btn-lg" %>
   </div>
     <% @client.assessments.each do |a| %>
       <ul>
@@ -51,7 +51,7 @@
   <h3>Goals</h3>
   <div class="jumbotron">
     <div class="pull-right">
-    <%= link_to "New Goal", new_client_goal_path(@client.id), class: "btn btn-sample btn-lg" %>
+    <%= link_to "New Goal", new_trainer_client_goal_path(@trainer.id, @client.id), class: "btn btn-sample btn-lg" %>
   </div>
     <% @client.goals.each do |g| %>
       <ul>
@@ -63,7 +63,7 @@
   <h3>Food Logs</h3>
   <div class="jumbotron">
     <div class="pull-right">
-    <%= link_to "New Food Log", new_client_food_log_path(@client.id), class: "btn btn-sample btn-lg" %>
+    <%= link_to "New Food Log", new_trainer_client_food_log_path(@trainer.id, @client.id), class: "btn btn-sample btn-lg" %>
   </div>
     <% @food_log.each do |fl| %>
       <ul>

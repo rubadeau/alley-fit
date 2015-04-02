@@ -21,9 +21,9 @@
 
   <h3>Clients</h3>
   <div class="jumbotron">
-    <% @client.each do |client| %>
+    <% @clients.each do |client| %>
       <ul>
-        <li><%= link_to client.name, trainer_client_path(@client, client) %></li>
+        <li><%= link_to client.name, trainer_client_path(@trainer.id, client) %></li>
       </ul>
     <% end %>
   </div>

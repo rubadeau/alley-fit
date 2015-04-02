@@ -3,14 +3,14 @@
 
 <ol class="breadcrumb">
   <li><%= link_to "Client List", root_path %></li>
-  <li><%= link_to @client.name, client_path(@client) %></li>
+  <li><%= link_to @client.name, trainer_client_path(@trainer, @client) %></li>
   <li class="active"><%= "All Workouts for #{@client.name}" %></li>
 </ol>
 
 <% @client.workouts.each do |w| %>
 <div class="jumbotron">
   <dl class="dl-horizontal">
-    <dd><h3><%= link_to w.date.strftime("%m/%d/%Y"), client_workout_path(@client, w) %></h3></dd>
+    <dd><h3><%= link_to w.date.strftime("%m/%d/%Y"), trainer_client_workout_path(@trainer, @client, w) %></h3></dd>
     <dt>Time</dt>
     <dd><%= w.time.strftime("%I:%M:%S %p") %></dd>
     <dt>Workout</dt>
