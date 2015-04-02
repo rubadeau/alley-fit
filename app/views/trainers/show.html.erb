@@ -21,6 +21,10 @@
 
   <h3>Clients</h3>
   <div class="jumbotron">
-
+    <% @client.each do |client| %>
+      <ul>
+        <li><%= link_to client.name, trainer_client_path(@client, client) %></li>
+      </ul>
+    <% end %>
   </div>
 </div>

@@ -2,6 +2,8 @@ class ClientsController < ApplicationController
 
   before_action :authenticate_user
   before_action :set_client, only: [:show, :edit, :update, :destroy]
+  before_action :set_trainer, only: [:show, :edit, :update, :destroy]
+
 
   def index
     if current_user.admin
@@ -64,5 +66,9 @@ class ClientsController < ApplicationController
 
     def set_client
       @client = Client.find(params[:id])
+    end
+
+    def set_trainer
+      @trainer = Trainer.find(params[:trainer_id])
     end
   end

@@ -1,7 +1,7 @@
 <div class="container">
   <div class="jumbotron">
       <div class="pull-right">
-        <%= link_to "New Client", new_client_path, class: "btn btn-sample btn-lg" %>
+        <%= link_to "New Client", new_trainer_client_path, class: "btn btn-sample btn-lg" %>
       </div>
       <p><h1>Alley's Clients</h1></p>
   </div>
@@ -14,7 +14,7 @@
     </thead>
     <% @clients.each do |client| %>
     <tr>
-      <td><%= link_to client.name, client_path(client) %></td>
+      <td><%= link_to client.name, trainer_client_path(trainer, client) %></td>
     </tr>
     <% end %>
   </table>
