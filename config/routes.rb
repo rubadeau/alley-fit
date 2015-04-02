@@ -8,6 +8,8 @@ Rails.application.routes.draw do
     get 'sign-in', to: 'authentication#new'
     post 'sign-in', to: 'authentication#create'
 
+    resources :trainers
+
    resources :clients do
      resources :workouts
      resources :assessments, except: [:index]
