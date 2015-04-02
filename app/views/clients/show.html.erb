@@ -55,7 +55,7 @@
   </div>
     <% @client.goals.each do |g| %>
       <ul>
-        <li><%= link_to g.goal_name, client_goal_path(@client, g) %></li>
+        <li><%= link_to g.goal_name, trainer_client_goal_path(@trainer, @client, g) %></li>
       </ul>
     <% end %>
   </div>
