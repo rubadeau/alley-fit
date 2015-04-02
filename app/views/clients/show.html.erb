@@ -67,7 +67,7 @@
   </div>
     <% @food_log.each do |fl| %>
       <ul>
-        <li><%= link_to fl.date.strftime("%m/%d/%Y"), client_food_log_path(@client, fl) %></li>
+        <li><%= link_to fl.date.strftime("%m/%d/%Y"), trainer_client_food_log_path(@trainer, @client, fl) %></li>
       </ul>
     <% end %>
   </div>

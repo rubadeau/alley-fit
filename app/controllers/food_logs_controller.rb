@@ -1,8 +1,9 @@
 class FoodLogsController < ApplicationController
 
   before_action :authenticate_user
-  before_action :find_client
-
+  before_action :set_trainer
+  before_action :set_client
+  before_action :set_workout, only: [:show, :edit, :update, :destroy]
 
   def new
     @food_log = FoodLog.new
@@ -11,7 +12,7 @@ class FoodLogsController < ApplicationController
   def create
     @food_log = @client.food_logs.new(food_log_params)
     if @food_log.save
-      redirect_to client_path(@client), notice: 'Food Log created successfully!'
+      redirect_to trainer_client_path(@trainer, @client), notice: 'Food Log created successfully!'
     else
       render :new
     end
@@ -28,7 +29,7 @@ class FoodLogsController < ApplicationController
   def update
     @food_log = @client.food_logs.find(params[:id])
       if @food_log.update(food_log_params)
-      redirect_to client_path(@client), notice: "Food Log updated successfully!"
+      redirect_to trainer_client_path(@trainer, @client), notice: "Food Log updated successfully!"
     else
       render :edit
     end
@@ -38,7 +39,7 @@ class FoodLogsController < ApplicationController
     food_log = @client.food_logs.find(params[:id])
     food_log.destroy
    flash[:notice] = "Deleted Food Log"
-   redirect_to client_path(@client)
+   redirect_to trainer_client_path(@trainer, @client)
   end
 
   private
@@ -52,4 +53,17 @@ class FoodLogsController < ApplicationController
   def find_client
     @client = Client.find(params[:client_id])
   end
+
+  def set_client
+    @client = @trainer.clients.find(params[:client_id])
+  end
+
+  def set_trainer
+    @trainer = Trainer.find(params[:trainer_id])
+  end
+
+  def set_workout
+    @food_log = @client.food_logs.find(params[:id])
+  end
+
 end
