@@ -23,7 +23,7 @@
   <div class="jumbotron">
     <% @clients.each do |client| %>
       <ul>
-        <li><%= link_to client.name, trainer_client_path(@trainer.id, client) %></li>
+        <li><%= link_to client.name, trainer_client_path(@trainer.id, client.id) %></li>
       </ul>
     <% end %>
   </div>
