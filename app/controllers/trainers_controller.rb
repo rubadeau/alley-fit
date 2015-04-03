@@ -1,4 +1,4 @@
-class TrainersController < ApplicationController
+class TrainersController < PrivateController
 
   def index
     @trainers = Trainer.all

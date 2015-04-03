@@ -1,4 +1,4 @@
-class ClientsController < ApplicationController
+class ClientsController < PrivateController
 
   before_action :authenticate_user
   before_action :set_trainer, only: [:show, :edit, :update, :destroy]
@@ -46,7 +46,7 @@ class ClientsController < ApplicationController
   def destroy
    @client.destroy
    flash[:notice] = "Deleted Client"
-   redirect_to clients_path
+   redirect_to trainer_clients_path
   end
 
 

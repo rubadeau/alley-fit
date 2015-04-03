@@ -1,4 +1,4 @@
-class AssessmentsController < ApplicationController
+class AssessmentsController < ClientController
 
   before_action :authenticate_user
   before_action :set_trainer

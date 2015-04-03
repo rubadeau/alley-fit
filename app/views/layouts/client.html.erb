@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+ <title>AlleyFit</title>
+ <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+ <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+ <%= csrf_meta_tags %>
+</head>
+<body>
+<br />
+<br />
+ <div class="container">
+     <nav class="navbar navbar-default navbar-fixed-top">
+       <div class="container">
+         <p class="navbar-brand">
+           <%=image_tag("headshot.png", class: "img-responsive")%>
+           <h3><%= link_to "AlleyFit", root_path %></h3>
+           <div class="pull-right">
+             <% if current_user %>
+               <%= link_to "#{current_user.name}", client_path(current_user), class: "btn btn-sample" %>
+               <%= link_to "Sign out", sign_out_path, class: "btn btn-sample" %>
+             <% else %>
+               <%= link_to "Sign In", sign_in_path, class: "btn btn-sample" %>
+               <%= link_to "Sign Up", sign_up_path, class: "btn btn-sample" %>
+             <% end %>
+           </div>
+         </p>
+       </div>
+     </nav>
+<br />
+
+<br />
+
+<br />
+   <% if flash[:notice] %>
+   <div class="alert alert-danger text-center" role="alert"><%= flash[:notice] %></div>
+   <% end %>
+   </div>
+ </div>
+
+<%= yield %>
+
+<footer>
+</footer>
+
+</body>
+</html>
