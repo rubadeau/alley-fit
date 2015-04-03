@@ -1,5 +1,5 @@
 <div class="form-horizontal">
-  <%= form_for [@client, @assessment] do |f| %>
+  <%= form_for [@trainer, @client, @assessment] do |f| %>
 
   <div class="form-group">
     <%= f.label :assessment_name, class: "col-md-2 control-label" %>
@@ -144,7 +144,7 @@
   <div class="form-group">
     <div class="col-md-offset-2 col-sm-6">
       <%= f.submit class: "btn btn-sample"%>
-      <%= link_to "Cancel", client_path(@client), class: "btn btn-custom" %>
+      <%= link_to "Cancel", trainer_client_path(@trainer, @client), class: "btn btn-custom" %>
     </div>
   </div>
 <% end %>

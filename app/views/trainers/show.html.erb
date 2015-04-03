@@ -1,0 +1,30 @@
+<div class="container">
+  <div class="page-header">
+    <div class="pull-right">
+    <%= link_to "Update Trainer Info", edit_trainer_path(@trainer), class: "btn btn-sample btn-lg" %>
+    <%= link_to  "Delete Trainer", trainer_path(@trainer), method: :delete, class: "btn btn-custom btn-lg",data: { confirm: "Are you sure you want to do this Alley?" }  %>
+
+  </div>
+    <h1><%= @trainer.name %></h1>
+  </div>
+  <h3>Contact Info</h3>
+  <div class="jumbotron">
+    <dl class="dl-horizontal">
+      <dt>Phone</dt>
+      <dd><%= @trainer.phone %></dd>
+      <dt>Email</dt>
+      <dd><%= mail_to @trainer.email %></dd>
+      <dt>Additional Info</dt>
+      <dd><%= @trainer.additional_info %></dd>
+    </dl>
+  </div>
+
+  <h3>Clients</h3>
+  <div class="jumbotron">
+    <% @clients.each do |client| %>
+      <ul>
+        <li><%= link_to client.name, trainer_client_path(@trainer.id, client.id) %></li>
+      </ul>
+    <% end %>
+  </div>
+</div>

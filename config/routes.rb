@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
 
-   root 'welcome#index'
+    root 'welcome#index'
 
     get 'sign-up', to: 'registrations#new'
     post 'sign-up', to: 'registrations#create'
@@ -8,12 +8,12 @@ Rails.application.routes.draw do
     get 'sign-in', to: 'authentication#new'
     post 'sign-in', to: 'authentication#create'
 
-   resources :clients do
-     resources :workouts
-     resources :assessments, except: [:index]
-     resources :goals, except: [:index]
-     resources :food_logs, except: [:index]
-
-   end
-
+  resources :trainers do
+    resources :clients do
+      resources :workouts
+      resources :assessments, except: [:index]
+      resources :goals, except: [:index]
+      resources :food_logs, except: [:index]
+    end
+  end
 end

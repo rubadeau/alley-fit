@@ -1,8 +1,9 @@
-class AssessmentsController < ApplicationController
-  
-  before_action :authenticate_user
-  before_action :find_client
+class AssessmentsController < ClientsController
 
+  before_action :authenticate_user
+  before_action :set_trainer
+  before_action :set_client
+  before_action :set_assessment, only: [:show, :edit, :update, :destroy]
 
   def new
     @assessment = Assessment.new
@@ -11,7 +12,7 @@ class AssessmentsController < ApplicationController
   def create
     @assessment = @client.assessments.new(assessment_params)
     if @assessment.save
-      redirect_to client_path(@client), notice: 'Assessment created successfully!'
+      redirect_to trainer_client_path(@trainer, @client), notice: 'Assessment created successfully!'
     else
       render :new
     end
@@ -28,7 +29,7 @@ class AssessmentsController < ApplicationController
   def update
     @assessment = @client.assessments.find(params[:id])
       if @assessment.update(assessment_params)
-      redirect_to client_path(@client), notice: "Assessment updated successfully!"
+      redirect_to trainer_client_path(@trainer, @client), notice: "Assessment updated successfully!"
     else
       render :edit
     end
@@ -38,7 +39,7 @@ class AssessmentsController < ApplicationController
     assessment = @client.assessments.find(params[:id])
     assessment.destroy
    flash[:notice] = "Deleted Assessment"
-   redirect_to client_path(@client)
+   redirect_to trainer_client_path(@trainer, @client)
   end
 
 
@@ -52,7 +53,15 @@ class AssessmentsController < ApplicationController
      :body_fat_percentage, :bmi, :heart_rate)
   end
 
-  def find_client
-    @client = Client.find(params[:client_id])
+  def set_client
+    @client = @trainer.clients.find(params[:client_id])
+  end
+
+  def set_trainer
+    @trainer = Trainer.find(params[:trainer_id])
+  end
+
+  def set_assessment
+    @assessment = @client.assessments.find(params[:id])
   end
 end

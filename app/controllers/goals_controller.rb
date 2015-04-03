@@ -1,7 +1,9 @@
-class GoalsController < ApplicationController
+class GoalsController < ClientsController
 
   before_action :authenticate_user
-  before_action :find_client
+  before_action :set_trainer
+  before_action :set_client
+  before_action :set_goal, only: [:show, :edit, :update, :destroy]
 
 
   def new
@@ -11,7 +13,7 @@ class GoalsController < ApplicationController
   def create
     @goal = @client.goals.new(goal_params)
     if @goal.save
-      redirect_to client_path(@client), notice: 'Goal created successfully!'
+      redirect_to trainer_client_path(@trainer, @client), notice: 'Goal created successfully!'
     else
       render :new
     end
@@ -29,7 +31,7 @@ class GoalsController < ApplicationController
     @goal = @client.goals.find(params[:id])
     if @goal.update(goal_params)
       flash[:notice] = "Goal updated successfully!"
-      redirect_to client_goal_path(@client, @goal)
+      redirect_to trainer_client_goal_path(@trainer, @client, @goal)
     else
       render :edit
     end
@@ -39,7 +41,7 @@ class GoalsController < ApplicationController
    goal = @client.goals.find(params[:id])
    goal.destroy
    flash[:notice] = "Deleted Goal"
-   redirect_to client_path(@client)
+   redirect_to trainer_client_path(@trainer, @client)
   end
 
 
@@ -49,7 +51,15 @@ class GoalsController < ApplicationController
     params.require(:goal).permit(:target_date, :goal_name, :goals, :completed, :client_id, :created_at, :updated_at)
   end
 
-  def find_client
-    @client = Client.find(params[:client_id])
+  def set_client
+    @client = @trainer.clients.find(params[:client_id])
+  end
+
+  def set_trainer
+    @trainer = Trainer.find(params[:trainer_id])
+  end
+
+  def set_goal
+    @goal = @client.goals.find(params[:id])
   end
 end

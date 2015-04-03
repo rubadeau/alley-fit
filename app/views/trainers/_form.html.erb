@@ -1,5 +1,5 @@
 <div class="form-horizontal">
-  <%= form_for [@trainer, @client] do |f| %>
+  <%= form_for @trainer do |f| %>
 
   <div class="form-group">
     <%= f.label :name, class: "col-md-2 control-label" %>
@@ -23,20 +23,6 @@
   </div>
 
   <div class="form-group">
-    <%= f.label :emergency_contact, class: "col-md-2 control-label" %>
-    <div class="col-md-7">
-      <%= f.text_field :emergency_contact, class: "form-control" %>
-    </div>
-  </div>
-
-  <div class="form-group">
-    <%= f.label :emergency_number, class: "col-md-2 control-label" %>
-    <div class="col-md-7">
-      <%= f.text_field :emergency_number, class: "form-control" %>
-    </div>
-  </div>
-
-  <div class="form-group">
     <%= f.label :additional_info, class: "col-md-2 control-label" %>
     <div class="col-md-7">
       <%= f.text_area :additional_info, class: "form-control" %>
@@ -46,7 +32,7 @@
   <div class="form-group">
     <div class="col-md-offset-2 col-sm-6">
       <%= f.submit class: "btn btn-sample"%>
-      <%= link_to "Cancel", trainer_clients_path, class: "btn btn-custom" %>
+      <%= link_to "Cancel", trainers_path, class: "btn btn-custom" %>
     </div>
   </div>
 <% end %>

@@ -1,13 +1,15 @@
-class ClientsController < ApplicationController
+class ClientsController < PrivateController
 
   before_action :authenticate_user
+  before_action :set_trainer, only: [:show, :edit, :update, :destroy]
   before_action :set_client, only: [:show, :edit, :update, :destroy]
+
 
   def index
     if current_user.admin
       @clients = Client.all.order(:name)
     else
-      redirect_to client_path(current_user)
+      redirect_to trainer_client_path(current_user)
     end
   end
 
@@ -35,7 +37,7 @@ class ClientsController < ApplicationController
   def update
     if @client.update(client_params)
       flash[:notice] = "Client updated successfully!"
-      redirect_to client_path(@client)
+      redirect_to trainer_client_path(@trainer, @client)
     else
       render :edit
     end
@@ -44,7 +46,7 @@ class ClientsController < ApplicationController
   def destroy
    @client.destroy
    flash[:notice] = "Deleted Client"
-   redirect_to clients_path
+   redirect_to trainer_clients_path
   end
 
 
@@ -52,7 +54,7 @@ class ClientsController < ApplicationController
 
     def client_params
       params.require(:client).permit(:name, :phone, :email, :member_id,
-      :emergency_contact, :emergency_number, :additional_info, :client_id,
+      :emergency_contact, :emergency_number, :additional_info,
       :password)
     end
 
@@ -63,6 +65,10 @@ class ClientsController < ApplicationController
     end
 
     def set_client
-      @client = Client.find(params[:id])
+      @client = @trainer.clients.find(params[:id])
+    end
+
+    def set_trainer
+      @trainer = Trainer.find(params[:trainer_id])
     end
   end

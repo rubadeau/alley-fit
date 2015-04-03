@@ -1,4 +1,4 @@
-class RegistrationsController < ApplicationController
+class RegistrationsController < ClientsController
 
   def new
     @client= Client.new

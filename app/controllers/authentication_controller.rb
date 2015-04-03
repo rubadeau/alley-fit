@@ -1,15 +1,15 @@
-class AuthenticationController < ApplicationController
+class AuthenticationController < ClientsController
 
   def new
     session[:client_id] = current_user
   end
 
   def create
-    client = Client.find_by(email: params[:email])
-    if client && client.authenticate(params[:password])
-      session[:client_id] = client.id
+    @client = Client.find_by(email: params[:email])
+    if @client && @client.authenticate(params[:password])
+      session[:client_id] = @client.id
       flash[:notice] ="You have successfully signed in"
-      redirect_to client_path(client)
+      redirect_to trainer_client_path(@client.trainer_id, @client)
     else
       @sign_in_error = "Email / Password combination is invalid"
       render :new
