@@ -1,4 +1,4 @@
-class FoodLogsController < ClientController
+class FoodLogsController < ClientsController
 
   before_action :authenticate_user
   before_action :set_trainer

@@ -1,4 +1,4 @@
-class GoalsController < ClientController
+class GoalsController < ClientsController
 
   before_action :authenticate_user
   before_action :set_trainer
