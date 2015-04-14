@@ -16,13 +16,13 @@
     <div class="jumbotron">
       <dl class="dl-horizontal">
         <dt>Date</dt>
-        <dd><%= @workout.date.strftime("%m/%d/%Y") %></dd>
+        <dd><%= simple_format(@workout.date.strftime("%m/%d/%Y")) %></dd>
         <dt>Time</dt>
-        <dd><%= @workout.time.strftime("%I:%M:%S %p") %></dd>
+        <dd><%= simple_format(@workout.time.strftime("%I:%M:%S %p")) %></dd>
         <dt>Workout</dt>
-        <dd><%= @workout.workout %></dd>
+        <dd><%= simple_format(@workout.workout) %></dd>
         <dt>Comments</dt>
-        <dd><%= @workout.comments %></dd>
+        <dd><%= simple_format(@workout.comments) %></dd>
       </dl>
     </div>
   </div>

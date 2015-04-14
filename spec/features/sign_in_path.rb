@@ -14,7 +14,7 @@ require 'rails_helper'
       password: 'quitelikeamouse',
       password_confirmation: 'quitelikeamouse')
 
-      visit sign_in_path
+      visit client_sign_in_path
 
       expect(current_path).to eq '/sign-in'
       expect(page).to have_content 'Sign into AlleyFit'
@@ -33,14 +33,14 @@ require 'rails_helper'
       visit root_path
       click_link 'Sign In'
 
-      expect(current_path).to eq(sign_in_path)
+      expect(current_path).to eq(client_sign_in_path)
       expect(page).to have_content 'Sign into AlleyFit'
 
       fill_in 'Email', with: 'fail@diehard.com'
       fill_in 'Password', with: 'notquitelikeamouse'
       click_button 'Sign In'
 
-      expect(current_path).to eq(sign_in_path)
+      expect(current_path).to eq(client_sign_in_path)
       expect(page).to have_content 'Email / Password combination is invalid'
     end
 end

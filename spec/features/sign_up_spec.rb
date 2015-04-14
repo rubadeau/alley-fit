@@ -10,7 +10,7 @@ feature 'Sign Up' do
 
     visit root_path
     click_link 'Sign Up'
-    expect(current_path).to eq(sign_up_path)
+    expect(current_path).to eq(client_sign_up_path)
     expect(page).to have_content("Sign up for AlleyFit")
 
     fill_in :client_name, with: 'Test'
