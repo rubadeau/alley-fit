@@ -10,7 +10,7 @@
             <% end %>
 
         <div class="form-horizontal">
-          <%= form_for @client, url: client_sign_up_path do |f| %>
+          <%= form_for [@trainer, @client], url: client_sign_up_path do |f| %>
 
           <div class="form-group"></div>
             <%= f.label :name, class: "pull-left control-label" %>
@@ -31,6 +31,11 @@
              <%= f.label :password_confirmation, class: "pull-left control-label" %>
              <div class="col-md-4"></div>
                <%= f.password_field :password_confirmation, class: "col-sm-12 form-control" %>
+
+            <div class="form-group"></div>
+              <%= f.label "Trainer", class: "pull-left control-label" %>
+              <div class="col-md-4"></div>
+                <%= f.collection_select(:trainer_id, Trainer.all, :id, :name, {prompt: "Please select a trainer..." }, {class:'form-control'}) %>
 
          <div class="form-group">
            <div class="col-sm-6 pull-left"><br>

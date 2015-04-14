@@ -18,7 +18,7 @@
            <div class="pull-right">
              <% if current_user %>
                <%= link_to "#{current_user.name}", client_path(current_user), class: "btn btn-sample" %>
-               <%= link_to "Sign out", sign_out_path, class: "btn btn-sample" %>
+               <%= link_to "Sign out", client_sign_out_path, class: "btn btn-sample" %>
              <% else %>
                <%= link_to "Sign In", client_sign_in_path, class: "btn btn-sample" %>
                <%= link_to "Sign Up", client_sign_up_path, class: "btn btn-sample" %>
