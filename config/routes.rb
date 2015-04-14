@@ -8,11 +8,11 @@ Rails.application.routes.draw do
   get 'client-sign-in', to: 'client_authentication#new'
   post 'client-sign-in', to: 'client_authentication#create'
 
-  # get 'trainer-sign-up', to: 'trainer_registrations#new'
-  # post 'trainer-sign-up', to: 'trainer_registrations#create'
-  # get 'trainer-sign-out', to: 'trainer_authentication#destroy'
-  # get 'trainer-sign-in', to: 'trainer_authentication#new'
-  # post 'trainer-sign-in', to: 'trainer_authentication#create'
+  get 'trainer-sign-up', to: 'trainer_registrations#new'
+  post 'trainer-sign-up', to: 'trainer_registrations#create'
+  get 'trainer-sign-out', to: 'trainer_authentication#destroy'
+  get 'trainer-sign-in', to: 'trainer_authentication#new'
+  post 'trainer-sign-in', to: 'trainer_authentication#create'
 
   resources :trainers do
     resources :clients do

@@ -1,0 +1,44 @@
+<div class="col-sm-12">
+  <div class="well col-sm-5 col-sm-offset-3">
+    <div class="form-group">
+      <h2 class = "page-header">Sign up for AlleyFit as a Trainer</h2>
+
+      <% if @trainer.errors.any? %>
+          <% @trainer.errors.full_messages.each do |message| %>
+            <strong><p class= "text-danger"><%= message %></p></strong>
+            <% end %>
+            <% end %>
+
+        <div class="form-horizontal">
+          <%= form_for  @trainer, url: trainer_sign_up_path do |f| %>
+
+          <div class="form-group"></div>
+            <%= f.label :name, class: "pull-left control-label" %>
+            <div class="col-md-4"></div>
+              <%= f.text_field :name, autofocus: true, class: "col-sm-12 form-control" %>
+
+           <div class="form-group"></div>
+             <%= f.label :email, class: "pull-left control-label" %>
+             <div class="col-md-4"></div>
+               <%= f.email_field :email, class: "col-sm-12 form-control" %>
+
+           <div class="form-group"></div>
+             <%= f.label :password, class: "pull-left control-label" %>
+             <div class="col-md-4"></div>
+               <%= f.password_field :password, class: "col-sm-12 form-control" %>
+
+           <div class="form-group"></div>
+             <%= f.label :password_confirmation, class: "pull-left control-label" %>
+             <div class="col-md-4"></div>
+               <%= f.password_field :password_confirmation, class: "col-sm-12 form-control" %>
+
+         <div class="form-group">
+           <div class="col-sm-6 pull-left"><br>
+             <%= f.submit "Sign Up", class: "btn btn-sample"%>
+           </div>
+         </div>
+       <% end %>
+      </div>
+    </div>
+  </div>
+</div>
