@@ -1,13 +1,13 @@
 class TrainerAuthenticationController < ApplicationController
 
   def new
-    session[:id] = current_user
+    session[:trainer_id] = current_user
   end
 
   def create
     @trainer = Trainer.find_by(email: params[:email])
     if @trainer && @trainer.authenticate(params[:password])
-      session[:id] = @trainer.id
+      session[:trainer_id] = @trainer.id
       flash[:notice] ="You have successfully signed in"
       redirect_to trainer_path(@trainer)
     else
@@ -17,7 +17,7 @@ class TrainerAuthenticationController < ApplicationController
   end
 
   def destroy
-    session[:id] = nil
+    session[:trainer_id] = nil
     flash[:notice] = "You have successfully logged out"
     redirect_to root_path
   end
