@@ -5,12 +5,12 @@ class ClientRegistrationsController < ApplicationController
   end
 
   def create
-    @trainer = Trainer.find(params[:trainer_id])
+    # @trainer = Trainer.find(params[:trainer_id])
     @client = Client.new(reg_params)
     if @client.save
       session[:client_id] = @client.id
       flash[:notice] = "You have successfully signed up"
-      redirect_to trainer_client_path(@trainer.id, @client)
+      redirect_to trainer_client_path(@client.trainer.id, @client)
     else
       render :new
     end
